@@ -1,0 +1,15 @@
+{
+  "name": "node-paperclip-tesseract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Scott Ballantyne",
+  "license": "MIT"
+  "dependencies": {
+    "tesseract_native": "^0.5.2"
+  }
+
+}
