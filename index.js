@@ -18,18 +18,12 @@ module.exports            = function(paperclip) {
       opts = {};
     }
     
-    if (options.allow_empty == true && options.mark_false == true) {
-      options.allow_empty = false;
-    }
-
     Ocr.ocr(this.paperclip.file().file.buffer, opts, function(err, result) {
       var object          = {};
-      if ((result && result.trim().length > 0) || options.allow_empty) {
+      if ((result && result.trim().length > 0) || options.empty) {
         object[attribute] = result.trim();
       } else {
-        if (options.mark_false) {
-          object[attribute] = false;
-        }
+        object[attribute] = false;
       }
       next(err, object);
     });
