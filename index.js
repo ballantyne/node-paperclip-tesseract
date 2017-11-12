@@ -23,7 +23,7 @@ module.exports            = function(paperclip) {
       if ((result && result.trim().length > 0) || options.empty) {
         object[attribute] = result.trim();
       } else {
-        object[attribute] = false;
+        if (options.presence == true) object[attribute] = false;
       }
       next(err, object);
     });
