@@ -38,12 +38,7 @@ const Image = new Schema({});
 Image.plugin(Paperclip.plugins.mongoose, {
   image: {
     image:{ 
-      before_save: [{task: require('node-paperclip-tesseract')}]
-      class_name: 'image',
-      has_attached_file: 'image', 
-      styles: [
-        { original: true },
-      ],
+      before_save: [{task: require('node-paperclip-tesseract')}],
       storage: 'file'
     }
   }
